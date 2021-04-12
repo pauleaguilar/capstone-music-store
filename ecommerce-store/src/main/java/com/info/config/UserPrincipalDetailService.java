@@ -10,7 +10,7 @@ import com.info.dao.UserRepository;
 import com.info.model.User;
 
 @Service
-public class UserPrincipalDetailService implements UserDetailsService{
+public class UserPrincipalDetailService implements UserDetailsService {
 	
 	@Autowired
 	private UserRepository userRepository;

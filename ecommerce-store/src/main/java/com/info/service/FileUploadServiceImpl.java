@@ -38,5 +38,4 @@ public class FileUploadServiceImpl implements FileUploadService {
 		String fileName = System.currentTimeMillis() + ext;
 		return fileName;
 	}
-
 }

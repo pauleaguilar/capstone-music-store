@@ -19,6 +19,7 @@
 -- Table structure for table `product`
 --
 
+USE shoponline;
 DROP TABLE IF EXISTS `product`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -41,7 +42,11 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (19,'/resources/1560667160624.jpg','Its a desktop','desktop Edit 2',34500,5,3),(21,'/resources/1559639666442.jpg','dek','desk00',22,1,3),(22,'/resources/1559640011726.jpg','alsdkflk','laptop00011',2112,1,2),(36,'/resources/1560611687661.jpg','Shirt for men, medium size','Nologo Shirt',120,10,34);
+INSERT INTO `product` VALUES
+(1,'/Graphics/guitar.jfif','A guitar made with authentic South African Mahogany','Guitar',230,5,2),
+(2,'/Graphics/gb832.jfif','One of the best sound mixers on the market!','Soundcraft GB8-32',3859,10,3),
+(3,'/Graphics/shirt.jpg','A unisex t-shirt to show your musical appreciation!','T-Shirt',5,2,4),
+(4,'/Graphics/headphones.jfif','Headphones to suit all occassions','Bowers & Wilkins PX7',450,5,5);
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

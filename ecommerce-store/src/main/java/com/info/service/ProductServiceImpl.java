@@ -13,7 +13,7 @@ import com.info.model.Product;
 
 @Service
 @Transactional
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 	
 	@Autowired
 	private ProductRepository productRepository;
@@ -42,5 +42,4 @@ public class ProductServiceImpl implements ProductService{
 	public void deleteProduct(long productId) {
 		productRepository.deleteById(productId);
 	}
-
 }

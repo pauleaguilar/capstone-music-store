@@ -10,20 +10,19 @@
 
 		<div class="d-flex justify-content-start p-2">
 			<a class="list-group-item mr-2" href="#" th:href="@{/allProduct}">All
-				Product</a> 
+				Products</a> 
 			<a class="list-group-item mr-2"	th:each="category : ${categoryList}"
 				th:text="${category.categoryName}" href="#" th:href="@{'/getProducts/' + ${category.categoryId}}"></a>
-		</div>
-
+		</div>    
 		<div class="row">
 			<div class="col-sm-4" th:each="product : ${productList}">
 				<div class="card mt-4">
-				<img th:src="${product.image}" class="card-img-top" alt="Product Image">
 					<div class="card-body">
+						<img th:src="${product.image}" class="card-img-top" alt="Product Image">
 						<h5 th:text="${product.productName}" class="card-title"></h5>
 						<p th:text="${product.productDescription}" class="card-text"></p>
 						<p th:text="'$ '+${product.productPrice}" class="card-text"></p>
-						<a href="#" th:href="@{'~/profile/addToCart/' + ${product.productId}}" class="btn btn-primary">AddToCart</a>
+						<a href="#" th:href="@{'~/profile/addToCart/' + ${product.productId}}" class="btn btn-primary">Add To Cart</a>
 					</div>
 				</div>
 			</div>

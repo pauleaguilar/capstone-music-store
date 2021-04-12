@@ -53,7 +53,7 @@ public class ProfileController {
 		long productLongId = Long.parseLong(productId);
 		Product product = productService.getProductById(productLongId).get();
 		
-		List<Product> productList = new ArrayList<Product>();
+		List<Product> productList = user.getProductList();
 		productList.add(product);
 		user.setProductList(productList);
 		
@@ -61,7 +61,7 @@ public class ProfileController {
 		userList.add(user);
 		product.setUserList(userList);
 		
-		userService.update(user);
+		userService.simpleUpdate(user);
 		productService.addProduct(product);
 		int total = findSum(user);
 		mv.addObject("total", total);
@@ -69,4 +69,40 @@ public class ProfileController {
 		return mv;
 	}
 	
+	@GetMapping("removeFromCart/{productId}")
+	public ModelAndView removeFromCart(@PathVariable("productId")String productId,Principal principal) {
+		ModelAndView mv = new ModelAndView("profile/cart-product");
+		User user = userService.findByEmail(principal.getName());
+		long productLongID = Long.parseLong(productId);
+		
+		List<Product> productList = user.getProductList();
+		int total = 0;
+		if(productList.size()>0)
+		{
+			int index = this.getFirstIndex(productLongID,productList);
+			productList.remove(index);
+			userService.simpleUpdate(user);
+			total = findSum(user);
+		}
+		mv.addObject("total", total);
+		mv.addObject("user", user);
+		return mv;
+	}
+	
+	private int getFirstIndex(long productId, List<Product>productList)
+	{
+		for(int i = 0; i < productList.size(); i++)
+			if(productList.get(i).getProductId()==productId)
+				return i;
+		return -1;
+	}
+	
+	@GetMapping("checkout")
+	public void checkout(Principal principal)
+	{
+		User user = userService.findByEmail(principal.getName());
+		
+		user.getProductList().clear();
+		userService.simpleUpdate(user);
+	}
 }

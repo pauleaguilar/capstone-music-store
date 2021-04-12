@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:insert="fragments.html :: headerfiles">
+</head>
+<body>
+<header th:insert="fragments.html :: nav"></header>
+<h1>Search results</h1>
+<tr th:each="result: ${results}"><br>
+    <img th:src="${result.artworkUrl100}" alt="Product Image">
+    <a th:href="${result.previewUrl}" target="_blank">
+    <td th:text="${result.artistName}" /> - 
+    <td th:text="${result.trackName}" />        - (preview)<br>
+    Price $<td th:text="${result.trackPrice}" /><br><br>
+
+</tr>
+</body>
+</html>

@@ -19,6 +19,7 @@
 -- Table structure for table `hibernate_sequence`
 --
 
+USE shoponline;
 DROP TABLE IF EXISTS `hibernate_sequence`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;

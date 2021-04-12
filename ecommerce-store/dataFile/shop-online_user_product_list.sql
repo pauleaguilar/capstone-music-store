@@ -19,6 +19,7 @@
 -- Table structure for table `user_product_list`
 --
 
+USE shoponline;
 DROP TABLE IF EXISTS `user_product_list`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -36,7 +37,7 @@ CREATE TABLE `user_product_list` (
 
 LOCK TABLES `user_product_list` WRITE;
 /*!40000 ALTER TABLE `user_product_list` DISABLE KEYS */;
-INSERT INTO `user_product_list` VALUES (23,21),(27,21),(27,22),(27,20),(27,4),(1,22),(1,20),(1,22),(27,22),(27,22),(27,22),(27,21);
+INSERT INTO `user_product_list` VALUES (23,2),(27,3),(27,4),(27,5);
 /*!40000 ALTER TABLE `user_product_list` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

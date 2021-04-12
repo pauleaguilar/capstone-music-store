@@ -12,6 +12,8 @@ public interface UserService {
 	
 	public void update(User user);
 	
+	public void simpleUpdate(User user);
+	
 	public List<User> findAllUser();
 	
 	public void deleteUser(long userId);

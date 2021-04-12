@@ -42,6 +42,11 @@ public class UserServiceImpl implements UserService{
 		user.setProductList(productlist1);
 		userRepository.save(user);
 	}
+	
+	@Override
+	public void simpleUpdate(User user) {
+		userRepository.save(user);
+	}
 
 	@Override
 	public List<User> findAllUser() {
@@ -52,5 +57,4 @@ public class UserServiceImpl implements UserService{
 	public void deleteUser(long userId) {
 		userRepository.deleteById(userId);
 	}
-
 }

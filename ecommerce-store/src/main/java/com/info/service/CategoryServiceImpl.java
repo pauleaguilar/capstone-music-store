@@ -13,7 +13,7 @@ import com.info.model.Category;
 
 @Service
 @Transactional
-public class CategoryServiceImpl implements CategoryService{
+public class CategoryServiceImpl implements CategoryService {
 
 	@Autowired
 	private CategoryRepository categoryRepository;
@@ -42,5 +42,4 @@ public class CategoryServiceImpl implements CategoryService{
 	public Optional<Category> getCategory(long categoryId) {
 		return categoryRepository.findById(categoryId);
 	}
-
 }

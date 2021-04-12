@@ -3,19 +3,26 @@
 	xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <!-- Fragment #1 : Headerfiles contains css and js references -->
 <head th:fragment="headerfiles">
-<meta charset="ISO-8859-1">
-<title>Online-Shop</title>
-<link th:href="@{~/bootstrap.min.css}" rel="stylesheet">
-<link th:href="@{~/fontawesome/css/all.css}" rel="stylesheet">
+	<meta charset="ISO-8859-1">
+	<title>Music Store</title>
+	<link th:href="@{~/bootstrap.min.css}" rel="stylesheet">
+	<link th:href="@{~/fontawesome/css/all.css}" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/32e1564991.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" ></script>
 </head>
 <body>
 
 	<!-- Fragment #2 : Navbar contains nav links -->
 	<div th:fragment="nav">
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<div class="container">
-			<a class="navbar-brand" href="#">Online Shopping</a>
-
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+			<a class="navbar-brand" href="#"><img src="../static/images/music-store.png" width="30" height="30"
+                                    class="d-inline-block align-top" alt="" th:src="@{/../static/images/music-store.png}"/>Music Store</a>
+			
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link" href="#"
@@ -29,6 +36,10 @@
 				<ul class="nav my-auto mr-4">
 					<li class="nav-item"><a href="#" class="text-info" th:href="@{/profile/cart-product}"><i class="fas fa-shopping-cart">Cart</i></a></li>
 				</ul>
+				<form class="form-inline my-2 my-lg-0" action="search">
+					<input type="text" required name="search" placeholder="Search for music">
+					<button class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Search</button>
+				</form>
 				<form class="form-inline my-2 my-lg-0" form-method="post"
 					th:action="@{/logout}">
 					<button sec:authorize="isAuthenticated()"
@@ -37,8 +48,8 @@
 						class="btn btn-outline-info my-2 my-sm-0 btn-sm" type="submit">Login</button>
 				</form>
 			</div>
-			</div>
 		</nav>
+		<body style='margin: 11vh;'></body>
 	</div>
 
 </body>

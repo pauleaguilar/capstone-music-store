@@ -40,5 +40,4 @@ public class AdminController {
 	public String addUser() {
 		return "admin/add-user";
 	}
-
 }

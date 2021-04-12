@@ -103,5 +103,4 @@ public class ManagerController {
 		mv.addObject("Product", productService.getProductById(Long.parseLong(productId)).get());
 		return mv;
 	}
-
 }

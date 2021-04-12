@@ -16,5 +16,4 @@ public interface ProductService {
 	public List<Product> findByCategory(long categoryId);
 	
 	public void deleteProduct(long productId);
-
 }

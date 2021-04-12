@@ -6,7 +6,7 @@
 <body>
 	<header th:insert="fragments.html :: nav"></header>
 	<div class="container">
-	<h1 class="display-4 my-3">Your Cart Product!</h1>
+	<h1 class="display-4 my-3">Your Cart</h1>
 		<div class="row">
 			<ul class="list-group col-9">
 				<li class="list-group-item d-flex justify-content-around">
@@ -21,13 +21,14 @@
 					<span class="my-auto" th:text="${product.productName}"></span> 
 					<span class="my-auto" th:text="'$ '+${product.productPrice}"></span>
 				</li>
+					<a href="#" th:href="@{'~/profile/removeFromCart/' + ${product.productId}}" class="btn btn-primary">Remove</a>
 			</ul>
 			<ul class="list-group col-9">
 				<li class="list-group-item d-flex justify-content-end">
 					<span class="h6" th:text="'Total : '+${total}"></span>
 				</li>
 				<li class="list-group-item d-flex justify-content-end">
-					<a href="#" type="button" class="btn btn-primary">Check Out</a>
+					<a href="#" th:href="@{/profile/checkout}" type="button" class="btn btn-primary">Check Out</a>
 				</li>
 			</ul>
 		</div>

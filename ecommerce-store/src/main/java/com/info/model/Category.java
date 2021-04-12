@@ -46,5 +46,4 @@ public class Category {
 	public void setProductList(List<Product> productList) {
 		this.productList = productList;
 	}
-
 }

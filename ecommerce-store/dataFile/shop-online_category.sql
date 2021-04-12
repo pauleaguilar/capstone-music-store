@@ -19,6 +19,7 @@
 -- Table structure for table `category`
 --
 
+USE shoponline;
 DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
@@ -35,7 +36,7 @@ CREATE TABLE `category` (
 
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
-INSERT INTO `category` VALUES (2,'Laptop'),(3,'Desktop'),(34,'Shirt'),(54,'Edit 2');
+INSERT INTO `category` VALUES (2,'Instruments'),(3,'Music Editing'),(4,'Apparel'),(5,'Accessories');
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

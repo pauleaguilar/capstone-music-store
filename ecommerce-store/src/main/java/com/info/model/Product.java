@@ -47,7 +47,6 @@ public class Product {
 		this.productDescription = "";
 	}
 	
-
 	public long getProductId() {
 		return productId;
 	}
@@ -111,6 +110,4 @@ public class Product {
 	public void setProductUnit(int productUnit) {
 		this.productUnit = productUnit;
 	}
-	
-	
 }

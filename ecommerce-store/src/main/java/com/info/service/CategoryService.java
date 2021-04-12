@@ -15,6 +15,5 @@ public interface CategoryService {
 	
 	public void updateCategory(Category category);
 	
-	public Optional<Category> getCategory(long categoryId);
-	
+	public Optional<Category> getCategory(long categoryId);	
 }
